@@ -1,8 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>
-            Hello World! 
-        </h1>
-    </body>
-</html>
+{% extends "master.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+<div class="mainText">
+    <h1>What computers are in use?</h1>
+    <p> Copley 204 </p>
+    <p> Copley 205 </p>
+    <p> Copley 216 </p>
+</div>
+
+
+{% endblock %}
