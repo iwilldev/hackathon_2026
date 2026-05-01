@@ -3,8 +3,8 @@
 ## Dependencies:
 You will need *Django* installed.\
 You can install it with :\
-`pip install django`\
+`pip install django`
 
 To start the server, run:\
 `python manage.py runserver`\
-Inside of the root folder\
+Inside of the root folder
