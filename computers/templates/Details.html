@@ -1,0 +1,41 @@
+{% extends 'master.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<div class='mainText'>
+    <ul style='float:left; background:none'>
+        <li>
+            <button onclick="history.back()" >Go Back</button>
+        </li>
+    </ul>
+
+    <h1>Copley 204</h1>
+    <hr>
+    <!--TODO need to populate this with actual data-->
+    <table>
+        <tr>
+            <th>Computer</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>cslab5</td>
+            <td>
+                <p style="color:red; font-family:GothamBold;">
+                    Logged In
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>cslab6</td>
+            <td>
+                Free
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+{% endblock %}

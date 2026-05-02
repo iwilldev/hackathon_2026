@@ -1,19 +1,55 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
 
 {% block title %}
-    Home Page
+Home Page
 {% endblock %}
 
 {% block content %}
-<div class="top">
-    <h1> Computer Labs</h1>
+<div class='mainText'>
+    <ul>
+        <li>
+            <a href='/admin'>
+                Admin
+            </a>
+        </li>
+    </ul>
 
-</div>
-<div class="mainText">
-    <h1>What computers are in use?</h1>
-    <p> Copley 204 </p>
-    <p> Copley 205 </p>
-    <p> Copley 216 </p>
+    <h1>RMC Computers</h1>
+    <hr>
+    <!--TODO need to populate this with actual data-->
+    <table>
+    <tr>
+        <th>Room</th>
+        <th>In Use</th>
+    </tr>
+    <tr>
+        <td>Copley 204</td>
+        <td>
+            6/30
+            <button>
+                Details
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>Copley 205</td>
+        <td>
+            10/30
+            <button>
+                Details
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>Copley 214</td>
+        <td>
+            0/10
+            <button>
+                Details
+            </button>
+        </td>
+    </tr>
+    </table>
 </div>
 
 

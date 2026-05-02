@@ -1,11 +1,138 @@
-body {
-    background-color: #ffe5d9;
+@font-face {
+    font-family: "GothamBlack";
+    src: url('./GothamSSm/gothamssm_black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.mainText {
+@font-face {
+    font-family: "Gotham";
+    src: url('./GothamSSm/gothamssm_light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamBold";
+    src: url('./GothamSSm/gothamssm_medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Gotham';
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'GothamBlack';
     text-align: center;
 }
 
-.top {
-    background-color: #ffcad4;
+p {
+    font-family: 'Gotham';
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul li {
+    float: left;
+}
+
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: #111111;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+}
+
+th,
+td {
+    border: 1px solid #dee2e6;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+td {
+    font-family: 'Gotham';
+}
+
+th {
+    font-family: 'GothamBold';
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+hr {
+  border: none;          /* Removes default browser styling */
+  height: 10px;           /* Set your desired thickness */
+  background-color: #ffcf00; /* Set your desired color */
+  border-radius: 0;      /* Forces sharp, non-rounded corners */
+}
+
+/* CSS */
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
 }
