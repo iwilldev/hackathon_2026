@@ -12,28 +12,29 @@ Home Page
         </li>
     </ul>
 
-    <h1>Copley 204</h1>
+    <h1>{{room}}</h1>
     <hr>
-    <!--TODO need to populate this with actual data-->
     <table>
         <tr>
             <th>Computer</th>
             <th>Status</th>
         </tr>
+        {% for computer in status %}
         <tr>
-            <td>cslab5</td>
+            <td>{{computer.comp_name}}</td>
             <td>
+                {% if computer.online == True %}
                 <p style="color:red; font-family:GothamBold;">
                     Logged In
                 </p>
+                {% else %}
+                <p>
+                    Free
+                </p>
+                {% endif %}
             </td>
         </tr>
-        <tr>
-            <td>cslab6</td>
-            <td>
-                Free
-            </td>
-        </tr>
+        {% endfor %}
     </table>
 </div>
 
