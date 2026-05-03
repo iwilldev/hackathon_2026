@@ -16,41 +16,35 @@ Home Page
 
     <h1>RMC Computers</h1>
     <hr>
-    <!--TODO need to populate this with actual data-->
     <table>
-    <tr>
-        <th>Room</th>
-        <th>In Use</th>
-    </tr>
-    <tr>
-        <td>Copley 204</td>
-        <td>
-            6/30
-            <button>
-                Details
-            </button>
-        </td>
-    </tr>
-    <tr>
-        <td>Copley 205</td>
-        <td>
-            10/30
-            <button>
-                Details
-            </button>
-        </td>
-    </tr>
-    <tr>
-        <td>Copley 214</td>
-        <td>
-            0/10
-            <button>
-                Details
-            </button>
-        </td>
-    </tr>
+        <tr>
+            <th>Room</th>
+            <th>In Use</th>
+        </tr>
+        {% for room in list %}
+        <tr>
+            <td>
+                {{room.roomName}}
+            </td>
+            <td>
+                {{room.amountOnline}}/{{room.total}}
+                <button id='{{room.id}}' style='float:right' onClick='getDetails(this)'>
+                    Details
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
     </table>
 </div>
+
+<!--Sending Django args from Python to HTML to JavaScript back to Python is weird this took forever to figure out-->
+{{list|json_script:'query'}}
+
+<script>
+    function getDetails(x) {
+        console.log(x)
+    }
+</script>
 
 
 {% endblock %}

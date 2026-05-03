@@ -11,6 +11,8 @@ class Room(models.Model):
 class Computers(models.Model):
     comp_name = models.CharField(max_length=60)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    online = models.BooleanField()
+    last_timestamp = models.CharField(max_length=24,blank=True)
 
     def __str__(self):
         return self.comp_name

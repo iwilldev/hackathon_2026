@@ -25,6 +25,8 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('comp_name', models.CharField(max_length=60)),
                 ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='computers.room')),
+                ('online', models.BooleanField()),
+                ('last_timestamp',models.CharField(max_length=24,blank=True)),
             ],
         ),
     ]
