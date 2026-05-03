@@ -35,27 +35,28 @@ def home(request):
    return HttpResponse(template.render(context))
 
 def details(request):
-   roomId = request.GET.get('id',0) # Changed this variable so I can use room_id which is in the db
+   roomId = None # Changed this variable so I can use room_id which is in the db
    # Note to Alex: The reason this wasn't working was because it's a string not an int so it wasn't equal to 0, it was equal to '0'
    # But I think it is better to also have it be greater than 0 numerically so I added some error checking here for that as well
    # also there is error checking for if the requested room isnt in the db
    error = False
    try:
+      roomId = request.GET.get('id',0)
       if int(roomId) <= 0:
          error = 'Room ID must be an int above zero'
+      
+      if request.method != 'GET':
+         error = 'Request must be GET'
+
+      # filter in django is where in sql
+      getName = Room.objects.filter(id=roomId).values_list('room_name')
+
+      # Because I know Alex likes explanations I will give you big explanation here in lieu of giving a push comment
+      # A user MIGHT enter a room ID that doesn't exist like 99999 so in that case also give error message
+      if len(getName) == 0:
+         error = 'Invalid room ID ' + roomId + '; this room does not exist'
    except:
       error = 'Room ID must be an int'
-   
-   if request.method != 'GET':
-      error = 'Request must be GET'
-
-   # filter in django is where in sql
-   getName = Room.objects.filter(id=roomId).values_list('room_name')
-
-   # Because I know Alex likes explanations I will give you big explanation here in lieu of giving a push comment
-   # A user MIGHT enter a room ID that doesn't exist like 99999 so in that case also give error message
-   if len(getName) == 0:
-      error = 'Invalid room ID ' + roomId + '; this room does not exist'
 
    page = 'details'
    if error:
