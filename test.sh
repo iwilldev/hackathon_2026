@@ -1,5 +1,5 @@
 #!/bin/bash
-addr = hostname -I;
+addr=hostname -I;
 server=$1
 while true; do
     

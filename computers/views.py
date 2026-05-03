@@ -55,7 +55,7 @@ def details(request):
    # Because I know Alex likes explanations I will give you big explanation here in lieu of giving a push comment
    # A user MIGHT enter a room ID that doesn't exist like 99999 so in that case also give error message
    if len(getName) == 0:
-      error = 'Invalid room ID ' + roomId + '; this room does not exist'
+      error = 'Invalid room ID ' , roomId , '; this room does not exist'
 
    page = 'details'
    if error:
