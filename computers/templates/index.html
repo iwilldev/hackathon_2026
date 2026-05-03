@@ -28,23 +28,12 @@ Home Page
             </td>
             <td>
                 {{room.amountOnline}}/{{room.total}}
-                <button id='{{room.id}}' style='float:right' onClick='getDetails(this)'>
-                    Details
-                </button>
+                <a href='./details.html?id={{room.roomId}}'>Details</a>
             </td>
         </tr>
         {% endfor %}
     </table>
 </div>
-
-<!--Sending Django args from Python to HTML to JavaScript back to Python is weird this took forever to figure out-->
-{{list|json_script:'query'}}
-
-<script>
-    function getDetails(x) {
-        console.log(x)
-    }
-</script>
 
 
 {% endblock %}

@@ -16,6 +16,7 @@ def home(request):
          'roomName': rName,
          'amountOnline': 0,
          'total': 0,
+         'roomId': rId, # Not necessary for client, but needs to be sent back to srv
       })
       current = data[-1]
       for comp in compList:
@@ -25,8 +26,6 @@ def home(request):
             if isOnline:
                current['amountOnline'] += 1
             current['total'] += 1
-   
-   print(data)
 
    context = {
       'list': data,
@@ -36,5 +35,5 @@ def home(request):
    return HttpResponse(template.render(context,request))
 
 def details(request):
-   template = loader.get_template('Details.html')
+   template = loader.get_template('details.html')
    return HttpResponse(template.render())

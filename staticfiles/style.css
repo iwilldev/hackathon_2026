@@ -91,7 +91,6 @@ hr {
   border-radius: 0;      /* Forces sharp, non-rounded corners */
 }
 
-/* CSS */
 button {
   align-items: center;
   appearance: none;
@@ -103,7 +102,7 @@ button {
   color: #36395A;
   cursor: pointer;
   display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
+  font-family: 'Gotham';
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -135,4 +134,17 @@ button:hover {
 button:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+}
+.button:hover {
+  background-color: #0056b3;
 }
