@@ -1,6 +1,7 @@
 #!/bin/bash
-addr = hostname -I;
+addr= hostname -I;
 server=$1
+ 
 while true; do
     
     if ping -c 4 -W 1 $server > /dev/null; then
