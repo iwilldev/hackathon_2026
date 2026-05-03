@@ -28,14 +28,14 @@ Home Page
             </td>
             <td>
                 {{room.amountOnline}}/{{room.total}}
-                <form method='GET' action='./details.html?id={{room.roomId}}'>
-                    <input type='submit' value='button'>
+                <form method='GET' action='./details.html'>
+                    <input type='hidden' name='id' value='{{room.roomId}}'>
+                    <input type='submit' value='Details'>
                 </form>
             </td>
         </tr>
         {% endfor %}
     </table>
 </div>
-
 
 {% endblock %}
