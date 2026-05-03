@@ -1,3 +1,23 @@
+{% extends 'master.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<html>
 <h1>
-    error happened to fix this later
+    An error occurred
 </h1>
+<ul style='float:left; background:none'>
+    <li>
+        <button onclick='history.back()'>Go Back</button>
+    </li>
+</ul>
+<br>
+<p>
+    {{issue}}
+</p>
+
+</html>
+{% endblock %}
