@@ -36,5 +36,10 @@ def home(request):
    return HttpResponse(template.render(context,request))
 
 def details(request):
-   template = loader.get_template('Details.html')
-   return HttpResponse(template.render())
+   room_id = request.GET.get("id", 0)
+   if request.method == 'GET' and room_id != 0:
+      template = loader.get_template('Details.html')
+      return HttpResponse(template.render())
+   else:
+      template = loader.get_template('error.html')
+      return HttpResponse(template.render())
