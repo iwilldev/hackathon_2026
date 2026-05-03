@@ -35,15 +35,10 @@ def home(request):
    return HttpResponse(template.render(context,request))
 
 def details(request):
-<<<<<<< HEAD
    room_id = request.GET.get("id", 0)
    if request.method == 'GET' and room_id != 0:
-      template = loader.get_template('Details.html')
+      template = loader.get_template('details.html')
       return HttpResponse(template.render())
    else:
       template = loader.get_template('error.html')
       return HttpResponse(template.render())
-=======
-   template = loader.get_template('details.html')
-   return HttpResponse(template.render())
->>>>>>> e861a09b82fc484bcc31d2d383dce03c572e385f
