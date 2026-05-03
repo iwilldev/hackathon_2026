@@ -1,11 +1,17 @@
 #!/bin/bash
-for i in {1..10}; do
-    host=cslab$i
-    if ping -c 4 -W 1 $host > /dev/null; then
-        echo "pinging $host"
-        ping $host
+addr = hostname -I;
+server=$1
+while true; do
+    
+    if ping -c 4 -W 1 $server > /dev/null; then
+        echo "sending data to $server"
+        if who; then
+            curl -X POST $server \
+                -H "Content-Type: application/json" \
+                -d '{"address": "$addr", "online": true}'
+        fi
     else 
-        echo "Unreachable" 
+        echo "$server is Unreachable" 
     fi
-
+    sleep 60
 done
