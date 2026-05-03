@@ -28,7 +28,9 @@ Home Page
             </td>
             <td>
                 {{room.amountOnline}}/{{room.total}}
-                <a href='./details.html?id={{room.roomId}}'>Details</a>
+                <form method='GET' action='./details.html?id={{room.roomId}}'>
+                    <input type='submit' value='button'>
+                </form>
             </td>
         </tr>
         {% endfor %}
